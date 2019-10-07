@@ -1,0 +1,7 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`should render Post List page 1`] = `
+<div>
+  Post List
+</div>
+`;
