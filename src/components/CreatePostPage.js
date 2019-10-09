@@ -11,7 +11,7 @@ export class CreatePostPage extends React.Component {
   render() {
     return (
       <div>
-        <div>Create Page</div>
+        <div>Create Post</div>
         <PostForm onSubmit={this.onSubmit} />
       </div>
     );
