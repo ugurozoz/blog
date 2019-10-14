@@ -1,12 +1,11 @@
 import React from "react";
 import { connect } from "react-redux";
+import PostItem from "./PostItem";
 
 export const PostList = props => (
   <div>
     {props.posts.map(post => (
-      <div className="post" key={post.id}>
-        {post.title}
-      </div>
+      <PostItem key={post.id} {...post} />
     ))}
   </div>
 );
@@ -17,7 +16,7 @@ export const PostList = props => (
 const mapStateToProps = state => {
   console.log("state.posts", state.posts);
   return {
-    posts: [...state.posts]
+    posts: state.posts
   };
 };
 export default connect(mapStateToProps)(PostList);

@@ -1,29 +1,44 @@
 import React from "react";
-import { Link } from "react-router-dom";
 import { connect } from "react-redux";
-import { startEditPost } from "../actions/posts";
+import { startEditPost, startRemovePost } from "../actions/posts";
 import PostForm from "./PostForm";
 
 export class EditPostPage extends React.Component {
+  constructor(props) {
+    super(props);
+  }
+
   onSubmit = post => {
-    this.props.startEditPost(post);
+    this.props.startEditPost(this.props.post.id, post);
     this.props.history.push("/");
   };
+
+  startRemovePost = () => {
+    this.props.startRemovePost({ id: this.props.post.id });
+    this.props.history.push("/");
+  };
+
   render() {
     return (
       <div>
         <div>Edit Post</div>
-        <PostForm onSubmit={this.onSubmit} />
+        <PostForm post={this.props.post} onSubmit={this.onSubmit} />
+        <button onClick={this.startRemovePost}>Remove Post</button>
       </div>
     );
   }
 }
 
-const mapDispatchToProps = dispatch => ({
-  startEditPost: post => dispatch(startEditPost(post))
+const mapStateToProps = (state, props) => ({
+  post: state.posts.find(post => post.id == props.match.params.id)
+});
+
+const mapDispatchToProps = (dispatch, props) => ({
+  startEditPost: (id, post) => dispatch(startEditPost(id, post)),
+  startRemovePost: id => dispatch(startRemovePost(id))
 });
 
 export default connect(
-  undefined,
+  mapStateToProps,
   mapDispatchToProps
 )(EditPostPage);

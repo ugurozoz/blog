@@ -68,3 +68,24 @@ export const startSetPosts = () => {
       });
   };
 };
+
+//REMOVE POST
+export const removePost = ({ id } = {}) => ({
+  type: "REMOVE_POST",
+  id
+});
+
+//REMOVE POST
+export const startRemovePost = ({ id } = {}) => {
+  return (dispatch, getState) => {
+    const uid = getState().auth.uid;
+    return database
+      .ref(`users/${uid}/posts/${id}`)
+      .remove()
+      .then(() => {
+        dispatch(removePost({ id }));
+      });
+  };
+};
+
+//START REMOVE POST
