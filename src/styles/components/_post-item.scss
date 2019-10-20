@@ -1,0 +1,15 @@
+.post {
+  padding: 20px;
+  border: 1px solid $more-light-grey;
+  border-top: none;
+  background: #fff;
+
+  &:hover {
+    background: $off-white;
+    transition: ease-out 0.3s;
+  }
+
+  & span {
+    float: right;
+  }
+}
