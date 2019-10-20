@@ -3,7 +3,7 @@ import { connect } from "react-redux";
 import PostItem from "./PostItem";
 
 export const PostList = props => (
-  <div>
+  <div className="posts">
     {props.posts.map(post => (
       <PostItem key={post.id} {...post} />
     ))}

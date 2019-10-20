@@ -41,22 +41,24 @@ export default class PostForm extends React.Component {
 
   render() {
     return (
-      <form className="form" onSubmit={this.onSubmit}>
-        {this.state.error && <p>{this.state.error}</p>}
-        <input
-          type="text"
-          placeholder="title"
-          autoFocus
-          value={this.state.title}
-          onChange={this.onTitleChange}
-        />
-        <textarea
-          placeholder="body"
-          value={this.state.body}
-          onChange={this.onBodyChange}
-        ></textarea>
-        <button>Add Blog</button>
-      </form>
+      <div>
+        <form className="form" onSubmit={this.onSubmit}>
+          {this.state.error && <p>{this.state.error}</p>}
+          <input
+            type="text"
+            placeholder="title"
+            autoFocus
+            value={this.state.title}
+            onChange={this.onTitleChange}
+          />
+          <textarea
+            placeholder="body"
+            value={this.state.body}
+            onChange={this.onBodyChange}
+          ></textarea>
+          <button>Add Blog</button>
+        </form>
+      </div>
     );
   }
 }

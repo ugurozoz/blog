@@ -5,7 +5,7 @@ import { Link } from "react-router-dom";
 
 const DashboardPage = () => {
   return (
-    <div>
+    <div className="content-container">
       <div>Dashboard Page</div>
       <div>
         <Link to="/create">Create Post</Link>
