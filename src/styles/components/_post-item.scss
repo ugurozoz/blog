@@ -1,8 +1,22 @@
+.post-item-container{
+  position: relative;
+  border: 1px solid $more-light-grey;
+  border-top:none;
+}
+
+.post-item{
+  width: calc(100% - 70px);
+  display: inline-block;
+}
+
 .post {
   padding: 20px;
-  border: 1px solid $more-light-grey;
+  
   border-top: none;
   background: #fff;
+  color:$color-secondary-1-4;
+  position: relative;
+  width: calc(100% + 70px); 
 
   &:hover {
     background: $off-white;
@@ -11,5 +25,13 @@
 
   & span {
     float: right;
+    color:$light-grey;
+    margin: 0 70px 0 0;
+  }
+
+
+  & strong {
+    max-width:calc(100% - 220px);
+    display: inline-block;
   }
 }

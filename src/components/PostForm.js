@@ -50,13 +50,15 @@ export default class PostForm extends React.Component {
             autoFocus
             value={this.state.title}
             onChange={this.onTitleChange}
+            className="text-input"
           />
           <textarea
             placeholder="body"
             value={this.state.body}
             onChange={this.onBodyChange}
+            className="textarea"
           ></textarea>
-          <button>Add Blog</button>
+          <button className="button button--add">Add Blog</button>
         </form>
       </div>
     );

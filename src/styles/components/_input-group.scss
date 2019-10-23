@@ -14,3 +14,10 @@
     margin: 0 $s-size 0 0;
   }
 }
+
+.post-filters {
+  & select {
+    margin: 0 0 0 20px;
+    color:$grey;
+  }
+}

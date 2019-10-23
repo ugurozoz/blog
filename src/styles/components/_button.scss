@@ -1,5 +1,5 @@
 .button {
-  background: $blue;
+  background: $color-primary-0;
   border: none;
   color: white;
   display: inline-block;
@@ -8,6 +8,46 @@
   line-height: 1;
   padding: $s-size;
   text-decoration: none;
+  align-self: flex-end;
+  
+
+  &--add {
+    @include respond(phone) {
+      align-self:inherit;
+    }
+  }
+
+  &--edit {
+    
+    background:#fff;
+    border: none;
+    color:$color-primary-0;
+    display: inline-block;
+    font-size: 1.6rem;
+    font-weight: 300;
+    line-height:65px;
+    text-align: center;
+    padding:0;
+    text-decoration: none;
+    align-self: flex-end;
+    position: absolute;
+    z-index: 4000;
+    right: 0px;
+    top: 0px;
+    bottom: 0px;
+    width:70px;
+  }
+
+  &--remove {
+    width:auto;
+    background:$red;
+    float:right;
+    @include respond(phone) {
+      float:none;
+      width:100%;
+      
+    }
+  }
 }
 
 .button--link {

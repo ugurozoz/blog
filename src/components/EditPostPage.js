@@ -21,9 +21,9 @@ export class EditPostPage extends React.Component {
   render() {
     return (
       <div className="content-container">
-        <div>Edit Post</div>
+        <div className="page-header">Edit Post</div>
         <PostForm post={this.props.post} onSubmit={this.onSubmit} />
-        <button onClick={this.startRemovePost}>Remove Post</button>
+        <button onClick={this.startRemovePost} className="button button--remove">Remove Post</button>
       </div>
     );
   }
