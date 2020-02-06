@@ -6,7 +6,7 @@ export const LoginPage = ({ startLogin }) => (
   <div className="box-layout">
     <div className="box-layout__box">
       <h1 className="box-layout__title">Blog App</h1>
-      <p>Blog</p>
+      <p>Login page</p>
       <button className="button" onClick={startLogin}>
         Login
       </button>
